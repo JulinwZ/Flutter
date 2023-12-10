@@ -44,7 +44,9 @@ class Interests extends StatelessWidget {
                     ),
                     child: Text(
                       textbuttons[index],
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
                     ),
                   )),
         )
