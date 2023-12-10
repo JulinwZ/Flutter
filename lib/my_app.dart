@@ -7,6 +7,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'SFProText',
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            overlayColor: MaterialStateProperty.resolveWith(
+              (states) {
+                return states.contains(MaterialState.pressed)
+                    ? Colors.blue
+                    : null;
+              },
+            ),
+          ),
+        ),
       ),
       home: MyStatefulWidget(),
     );
