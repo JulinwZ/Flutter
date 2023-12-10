@@ -39,42 +39,53 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.close),
-          color: Colors.green,
-          onPressed: () {},
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.exit_to_app),
-            color: Colors.green,
-            onPressed: () {},
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            leading: IconButton(
+              icon: const Icon(Icons.close),
+              color: Colors.green,
+              onPressed: () {},
+            ),
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.exit_to_app),
+                color: Colors.green,
+                onPressed: () {},
+              ),
+            ],
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                TopContent(
+                  toggleContentVisibility: _toggleContentVisibility,
+                  isFirstButtonActive: _isFirstButtonActive,
+                  isSecondButtonActive: _isSecondButtonActive,
+                ),
+                Visibility(
+                  visible: _isFirstButtonActive,
+                  child: Column(
+                    children: [
+                      ScrollList(),
+                      TariffsAndLimits(),
+                      Interests(
+                        areButtonsGreen: _areButtonsGreen,
+                        textbuttons: _textbuttons,
+                        toggleButtonColor: _toggleButtonColor,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            TopContent(
-                toggleContentVisibility: _toggleContentVisibility,
-                isFirstButtonActive: _isFirstButtonActive,
-                isSecondButtonActive: _isSecondButtonActive),
-            Visibility(
-                visible: _isFirstButtonActive,
-                child: Column(
-                  children: [
-                    ScrollList(),
-                    TariffsAndLimits(),
-                    Interests(
-                        areButtonsGreen: _areButtonsGreen,
-                        textbuttons: _textbuttons,
-                        toggleButtonColor: _toggleButtonColor),
-                  ],
-                )),
-          ],
-        ),
-      ),
     );
   }
+}
+
+void main() {
+  runApp(MyStatefulWidget());
 }
