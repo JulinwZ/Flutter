@@ -81,7 +81,7 @@ flutter:
   fonts:
     - family: SFProText
       fonts:
-        - asset: assets/fonts/SFProText-Light.ttf
+        - asset: lib/assets/fonts/SFProText-Light.ttf
   #   - family: Minggola
   #     fonts:
   #       - asset: fonts/minggola.ttf
