@@ -3,6 +3,12 @@ Flutter 3.16.1
 
 Проект запускается. Делал на Google Chrome с помощью режима разработчика. Ставил разные модели телефонов.
 
+Разбил проект на отдельные файлы.
 Все файлы используются в my_stateful_widget.dart
 
 Я сначала испугался после проверки из гита, что не работает проект. Но потом сделал flutter pub get
+
+Фотографии:
+![photo1](https://i.imgur.com/7gjCNPK.jpg)
+![photo2](https://i.imgur.com/vXasDQA.jpg)
+![photo3](https://i.imgur.com/c4w2BQf.jpg)
